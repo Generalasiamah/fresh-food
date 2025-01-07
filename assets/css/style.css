@@ -350,7 +350,7 @@ body.active { overflow: hidden; }
   --btn-color: var(--rich-black-fogra-29);
 
   position: fixed;
-  top: -86px;
+  top: -130px;
   background-color: var(--white);
   box-shadow: var(--shadow-1);
   animation: slideIn 0.5s ease-out forwards;
@@ -384,6 +384,7 @@ body.active { overflow: hidden; }
   display: flex;
   align-items: center;
   gap: 20px;
+  padding-bottom: 15px;
 }
 
 .search-btn {
@@ -424,6 +425,7 @@ body.active { overflow: hidden; }
   width: calc(100% - 30px);
   background-color: var(--white);
   padding-inline: 20px;
+  padding-bottom: 20px;
   box-shadow: var(--shadow-1);
   height: 0;
   overflow: hidden;
@@ -517,7 +519,17 @@ body.active { overflow: hidden; }
   cursor: url("../images/close.png"), auto;
 }
 
+.main-logo {
+  width: 70px; /* Set width to 14px */
+  height: 70px; /* Set height to 14px */
+  margin-right: 5px; /* Optional: Space between the icon and text */
+  vertical-align: middle; /* Align the icon vertically with the text */
+}
 
+.logo {
+  display: inline-flex; /* Ensures content stays in one line */
+  align-items: center; /* Aligns items (text and image) vertically */
+}
 
 
 
@@ -624,7 +636,51 @@ body.active { overflow: hidden; }
   scroll-snap-align: start;
 }
 
+/* Show the active gallery */
+.product-gallery {
+  display: none;
+  margin-top: 20px;
+}
 
+.product-gallery.active {
+  display: block;
+}
+
+/* Grid-based gallery */
+.gallery-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 100px;
+  margin-top: 10px;
+}
+
+
+/* Each product's container */
+.gallery-item {
+  text-align: center; /* Center text inside item */
+}
+
+/* Style the images */
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 1/1;;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.product-name {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
 
 
 
@@ -636,7 +692,7 @@ body.active { overflow: hidden; }
 
 .about-banner {
   position: relative;
-  aspect-ratio: 1 / 0.9;
+  width: 210%;
 }
 
 .about-img {
@@ -1423,6 +1479,36 @@ textarea.input-field {
     pointer-events: none;
     z-index: -1;
   }
+/* Parent container styling */
+.hero {
+  position: relative; /* Enables positioning of child elements */
+  display: flex; /* Aligns text and image horizontally */
+  align-items: center; /* Vertically centers the text */
+  height: 100vh; /* Makes the section take up the full viewport height */
+  padding: 0; /* Ensures no extra space around the content */
+  overflow: hidden; /* Prevents image overflow */
+}
+
+/* Text content styling */
+.hero-content {
+  z-index: 2; /* Keeps text above the image */
+  flex: 1; /* Ensures text occupies one side */
+  padding-left: 20px; /* Adds space on the left for the text */
+  color: #fff; /* Ensures text is visible */
+}
+
+/* Image styling */
+.man {
+  position: absolute; /* Allows the image to fill the right side */
+  top: 0; /* Start at the top of the section */
+  right: -300px; /* Align to the right edge */
+  bottom: 0; /* Stretch to the bottom of the section */
+  width: auto; /* Maintains aspect ratio */
+  height: 100%; /* Stretches the image to fill the section height */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+  z-index: 1; /* Places the image behind the text */
+}
+
 
 
 
@@ -1577,6 +1663,7 @@ textarea.input-field {
   .navbar.active {
     all: unset;
     margin-inline-start: auto;
+    padding-bottom: 15px;
   }
 
   .navbar-list {

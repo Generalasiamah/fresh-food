@@ -90,3 +90,55 @@ window.addEventListener("scroll", function () {
   }
 
 });
+
+// Function to show the selected product gallery
+function showGallery(galleryId) {
+  // Hide all product galleries
+  const galleries = document.querySelectorAll('.product-gallery');
+  galleries.forEach(gallery => gallery.classList.remove('active'));
+
+  // Show the clicked product gallery
+  const activeGallery = document.getElementById(galleryId);
+  if (activeGallery) {
+    activeGallery.classList.add('active');
+  }
+}
+
+function toggleGallery(galleryId) {
+  // Collect all product galleries
+  const galleries = document.querySelectorAll('.product-gallery');
+
+  // Find the gallery we want to toggle
+  const targetGallery = document.getElementById(galleryId);
+  if (!targetGallery) return; // If it doesn't exist, just stop
+
+  // If the target gallery is already active, hide it
+  if (targetGallery.classList.contains('active')) {
+    targetGallery.classList.remove('active');
+  } else {
+    // Otherwise, first hide all galleries
+    galleries.forEach(gallery => gallery.classList.remove('active'));
+    
+    // Then show (activate) the clicked gallery
+    targetGallery.classList.add('active');
+  }
+}
+
+
+function filterItems(country) {
+  // Select all items in .food-menu-list
+  const allItems = document.querySelectorAll('.food-menu-list li');
+
+  allItems.forEach(item => {
+    // Get the country data from data-country attribute
+    const itemCountry = item.dataset.country; 
+    // or `item.getAttribute('data-country')`
+
+    // If user clicked 'All' OR the item's data-country matches the filter:
+    if (country === 'All' || itemCountry === country) {
+      item.style.display = 'block';  // Show it
+    } else {
+      item.style.display = 'none';   // Hide it
+    }
+  });
+}
