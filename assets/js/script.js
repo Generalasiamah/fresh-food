@@ -142,3 +142,57 @@ function filterItems(country) {
     }
   });
 }
+
+const slides = document.querySelectorAll('.slide');
+const prevArrow = document.querySelector('.prev-arrow');
+const nextArrow = document.querySelector('.next-arrow');
+
+let currentSlideIndex = 0;
+let slideInterval; // For auto-slide
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[index].classList.add('active');
+}
+
+function goToNextSlide() {
+  currentSlideIndex++;
+  if (currentSlideIndex >= slides.length) {
+    currentSlideIndex = 0;
+  }
+  showSlide(currentSlideIndex);
+}
+
+function goToPrevSlide() {
+  currentSlideIndex--;
+  if (currentSlideIndex < 0) {
+    currentSlideIndex = slides.length - 1;
+  }
+  showSlide(currentSlideIndex);
+}
+
+// Start auto-slide
+function startAutoSlide() {
+  slideInterval = setInterval(goToNextSlide, 5000); // 5 seconds
+}
+
+function stopAutoSlide() {
+  clearInterval(slideInterval);
+}
+
+// Event listeners
+nextArrow.addEventListener('click', () => {
+  stopAutoSlide();     // optional if you want to pause on manual click
+  goToNextSlide();
+  startAutoSlide();    // optional if you want it to resume auto-sliding
+});
+
+prevArrow.addEventListener('click', () => {
+  stopAutoSlide();
+  goToPrevSlide();
+  startAutoSlide();
+});
+
+// Initialize
+showSlide(currentSlideIndex);
+startAutoSlide();
