@@ -189,7 +189,7 @@ body.active { overflow: hidden; }
 .h3,
 .h4 {
   font-family: var(--ff-rubik);
-  color: var(--rich-black-fogra-29);
+  color: #32b44a;
   line-height: 1.2;
   letter-spacing: -1px;
 }
@@ -238,7 +238,7 @@ body.active { overflow: hidden; }
 
 .btn-hover:is(:hover, :focus)::after { --scale: 500; }
 
-.section { padding-block: var(--section-padding); }
+.section { padding-block: 25px; }
 
 .section.white { background-color: var(--isabelline); }
 
@@ -352,10 +352,11 @@ body.active { overflow: hidden; }
   --btn-color: var(--rich-black-fogra-29);
 
   position: fixed;
-  top: -130px;
+  top: -100px;
   background-color: var(--white);
   box-shadow: var(--shadow-1);
   animation: slideIn 0.5s ease-out forwards;
+  height: 100px;
 }
 
 @keyframes slideIn {
@@ -522,8 +523,8 @@ body.active { overflow: hidden; }
 }
 
 .main-logo {
-  width: 70px; /* Set width to 14px */
-  height: 70px; /* Set height to 14px */
+  width: 50px; /* Set width to 14px */
+  height: 50px; /* Set height to 14px */
   margin-right: 5px; /* Optional: Space between the icon and text */
   vertical-align: middle; /* Align the icon vertically with the text */
 }
@@ -545,8 +546,10 @@ body.active { overflow: hidden; }
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-block: 145px 60px;
+  padding-block: 100px 60px;
   text-align: center;
+  position: relative;
+  /* background-color: #EC1E27; */
 }
 
 .hero-subtitle {
@@ -762,7 +765,7 @@ body.active { overflow: hidden; }
   margin-block-end: 30px;
 }
 
-.fiter-list {
+.filter-list{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -777,6 +780,7 @@ body.active { overflow: hidden; }
   font-weight: var(--fw-500);
   padding: 5px 20px;
   border: 1px solid var(--border-color, var(--cultured));
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .filter-btn.active {
@@ -784,6 +788,7 @@ body.active { overflow: hidden; }
   --color: var(--white);
   --border-color: #32b44a;
 }
+
 
 .food-menu-list {
   display: grid;
@@ -1016,9 +1021,9 @@ body.active { overflow: hidden; }
 
 .banner-lg { height: 430px; }
 
-.banner-sm { height: 200px; }
+.banner-sm { height: 430px; }
 
-.banner-md { height: 240px; }
+.banner-md { height: 430px; }
 
 .banner-card {
   position: relative;
@@ -1397,7 +1402,23 @@ textarea.input-field {
 
 .copyright-link:is(:hover, :focus) { text-decoration: underline; }
 
+.product-description{
+  font-family: var(--ff-rubik);
+  color: black;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-size: 1.5rem;
 
+}
+
+.product-name{
+  font-family: var(--ff-rubik);
+  color: #32b44a;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-size: 2.3rem;
+  font-weight: var(--fw-600);
+}
 
 
 
@@ -1440,17 +1461,94 @@ textarea.input-field {
  * responsive for larger than 480px screen
  */
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
 
   /**
    * HEADER
    */
 
   .header-btn-group .btn {
-    display: block;
+    display: none;
     --bg-color: #32b44a;
   }
-  
+
+  .hero{
+    height: auto;
+  }
+  .homepage {
+    max-width: 480px;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .man{
+    display: none;
+  }
+
+  .main-logo{
+    height: 40px;
+    width: 40px;
+  }
+
+  .logo{
+    font-size: 2.5rem;
+  }
+
+  .header.active{
+    top: -100px;
+    height: 80px;
+  }
+
+  .header{
+    height: 80px;
+  }
+
+  .section-text{
+    margin-top: 10px;
+  }
+
+  .slide-img{
+    object-fit: cover;
+    height: 200px;
+  }
+
+  .about-banner{
+    width: 100%;
+  }
+
+  .gallery-items{
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .food-menu-list{
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .food-menu-card{
+    padding: 10px;
+  }
+
+  .card-title{
+    font-size: small;
+  }
+
+  .price-text{
+    font-size: small;
+  }
+
+  .footer-top{
+    height: 850px;
+  }
+
+  .footer-form{
+    display: none;
+  }
+
 }
 
 
@@ -1461,14 +1559,14 @@ textarea.input-field {
  * responsive for larger than 550px screen
  */
 
-@media (min-width: 550px) {
+ @media (min-width: 481px) and (max-width: 1024px){
 
   /**
    * REUSED STYLE
    */
 
   .container {
-    max-width: 550px;
+    max-width: 1024px;
     width: 100%;
     margin-inline: auto;
   }
@@ -1491,7 +1589,11 @@ textarea.input-field {
 
   .footer-top .container { grid-template-columns: 1fr 1fr; }
 
-}
+  /* .about-banner{
+    width: 100%;
+  } */
+
+
 
 
 
@@ -1501,7 +1603,7 @@ textarea.input-field {
  * responsive for larger than 768px screen
  */
 
-@media (min-width: 768px) {
+
 
   /**
    * REUSED STYLE
@@ -1520,6 +1622,7 @@ textarea.input-field {
     text-align: left;
     overflow: hidden;
     z-index: 1;
+    height: 885px;
   }
 
   .hero-content > :is(*, .btn) { margin-inline: 0; }
@@ -1554,14 +1657,7 @@ textarea.input-field {
     z-index: -1;
   }
 /* Parent container styling */
-.hero {
-  position: relative; /* Enables positioning of child elements */
-  display: flex; /* Aligns text and image horizontally */
-  align-items: center; /* Vertically centers the text */
-  height: 100vh; /* Makes the section take up the full viewport height */
-  padding: 0; /* Ensures no extra space around the content */
-  overflow: hidden; /* Prevents image overflow */
-}
+
 
 /* Text content styling */
 .hero-content {
@@ -1571,17 +1667,11 @@ textarea.input-field {
   color: #fff; /* Ensures text is visible */
 }
 
-/* Image styling */
-.man {
-  position: absolute; /* Allows the image to fill the right side */
-  top: 0; /* Start at the top of the section */
-  right: -300px; /* Align to the right edge */
-  bottom: 0; /* Stretch to the bottom of the section */
-  width: auto; /* Maintains aspect ratio */
-  height: 100%; /* Stretches the image to fill the section height */
-  object-fit: cover; /* Ensures the image fills the space without distortion */
-  z-index: 1; /* Places the image behind the text */
+.homepage{
+  display: flex;
+  align-items: center;
 }
+
 
 
 
@@ -1685,6 +1775,14 @@ textarea.input-field {
 
   .input-wrapper { grid-template-columns: 1fr 1fr; }
 
+  .footer-top{
+    height: 700px;
+  }
+
+  .footer-form{
+    display: none;
+  }
+
 }
 
 
@@ -1695,7 +1793,7 @@ textarea.input-field {
  * responsive for larger than 992px screen
  */
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
 
   /**
    * CUSTOM PROPERTY
@@ -1717,7 +1815,9 @@ textarea.input-field {
    * REUSED STYLE
    */
 
-  .container { max-width: 960px; }
+  .container { 
+    max-width: 1200px; 
+    margin: 0 auto;}
 
   .has-scrollbar > li { min-width: calc(33.33% - 6.66px); }
 
@@ -1751,7 +1851,7 @@ textarea.input-field {
   .navbar-link {
     --fs-4: 1.5rem;
     color: var(--btn-color);
-    letter-spacing: -0.5px;
+    /* letter-spacing: -0.5px; */
   }
 
 
@@ -1761,7 +1861,7 @@ textarea.input-field {
    */
 
   .hero {
-    min-height: 660px;
+    height: 885px;
     display: grid;
     align-items: center;
   }
@@ -1783,6 +1883,13 @@ textarea.input-field {
   }
 
   .hero-img-bg { transform: scale(1.4) translate(20px, -20px); }
+
+  .homepage{
+    display: flex;
+    align-items: center;
+  }
+
+  
 
 
 
@@ -1819,6 +1926,24 @@ textarea.input-field {
 
   :is(.banner-md, .banner-sm) .banner-title,
   .banner-lg .banner-subtitle { --fs-2: 3.2rem; }
+
+  .banner-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for balanced layout */
+    grid-gap: 20px; /* Space between items */
+    justify-content: center; /* Centers the grid content */
+    align-content: center; /* Aligns grid rows */
+    width: 100%; /* Ensures full-width usage */
+    max-width: 1200px; /* Optional: restricts the grid's max width */
+    margin: 0 auto; /* Centers the grid on the page */
+  }
+  
+  .banner-list > :nth-child(4) {
+    grid-column: 2 / span 1; /* Spans the last item across two columns */
+  }
+
+  .ba
+  
 
 
 
@@ -1859,7 +1984,7 @@ textarea.input-field {
     right: 30px;
   }
 
-}
+
 
 
 
@@ -1869,13 +1994,13 @@ textarea.input-field {
  * responsive for larger than 1200px screen
  */
 
-@media (min-width: 1200px) {
+
 
   /**
    * REUSED STYLE
    */
 
-  .container { max-width: 1200px; }
+
 
 
 
@@ -1883,7 +2008,7 @@ textarea.input-field {
    * HERO
    */
 
-  .hero { min-height: 770px; }
+  
 
 
 
@@ -1900,6 +2025,11 @@ textarea.input-field {
    */
 
   .about .container { gap: 60px; }
+
+  .about-banner {
+    
+    width: 100%;
+  }
 
 
 
@@ -1918,6 +2048,10 @@ textarea.input-field {
    */
 
   .banner-md .banner-item-content { left: 55%; }
+
+  .delivery-banner{
+    width: 50%;
+  }
 
 
 

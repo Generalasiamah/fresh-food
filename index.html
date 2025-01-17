@@ -130,7 +130,7 @@
       -->
 
       <section class="hero" id="home" style="background-image: url('./assets/images/hero-bg.jpg')">
-        <div class="container">
+        <div class="container homepage">
 
           <div class="hero-content">
 
@@ -143,98 +143,25 @@
             <button class="btn">Order Now</button>
 
           </div>
+          <div>
 
               <img src="./assets/images/pagegirl.png" width="700" height="637" loading="lazy" alt="Burger"
               class="man">
-          
+          </div>
 
         </div>
       </section>
-      
-      <section class="section section-divider bloge" id="blog">
+
+      <section class="section section-divider gray about" id="about">
         <div class="container">
-      
-          <p class="section-subtitle"></p>
-      
-          <h2 class="h2 section-title">
-            We sell everything you love about Africa, wherever you are in the world. <span class="span"></span>
-          </h2>
-      
-          <p class="section-text">
-            Our mission goes beyond offering our own line of authentic foods. We proudly curate and provide a wide variety of Ghanaian-made products, from local staples to specialty items, all crafted with the rich heritage and flavors of Ghana.
-            <!-- The "client wants to tell a story" text goes here. 
-                 Add as much or as little as you'd like above the slider. -->
-          </p>
-      
-          <!-- Slider wrapper -->
-          <div class="slider">
-      
-            <!-- Slide 1 -->
-            <div class="slide active">
-              <!-- Text above the image -->
-              
-              <img src="./assets/images/warehouse1.jpg" alt="Warehouse 1" class="slide-img">
-            </div>
-      
-            <!-- Slide 2 -->
-         
-      
-            <!-- Slide 3 -->
-            <div class="slide">
-              
-              <img src="./assets/images/warehouse3.jpg" alt="Warehouse 3" class="slide-img">
-            </div>
-      
-            <!-- Slide 4 -->
-            
 
-            <div class="slide">
-              
-              <img src="./assets/images/warehouse5.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-
-            <div class="slide">
-              
-              <img src="./assets/images/warehouse6.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-            <div class="slide">
-              
-              
-              <img src="./assets/images/warehouse7.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-            <div class="slide">
-              
-              <img src="./assets/images/warehouse8.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-            <div class="slide">
-              
-              <img src="./assets/images/warehouse9.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-            <div class="slide">
-              
-              <img src="./assets/images/warehouse10.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-            <div class="slide">
-             
-              <img src="./assets/images/warehouse11.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-            <div class="slide">
-              
-              <img src="./assets/images/warehouse12.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-            <div class="slide">
-              
-              <img src="./assets/images/warehouse13.jpg" alt="Warehouse 4" class="slide-img">
-            </div>
-      
-            <!-- Navigation arrows -->
-            <button class="arrow prev-arrow" aria-label="Previous slide">&#10094;</button>
-            <button class="arrow next-arrow" aria-label="Next slide">&#10095;</button>
-      
-          </div> <!-- /slider -->
-      
-        </div><!-- /container -->
+          
+          <div>
+            <img src="./assets/images/PERSONAL.png" alt="" class="about-banner">
+          </div>
+        </div>
       </section>
+      
       
 
 
@@ -692,15 +619,7 @@
         - #ABOUT
       -->
 
-      <section class="section section-divider gray about" id="about">
-        <div class="container">
-
-          
-          <div>
-            <img src="./assets/images/PERSONAL.png" alt="" class="about-banner">
-          </div>
-        </div>
-      </section>
+      
 
 
 
@@ -724,30 +643,24 @@
     convenient access to all your wholesale needs. 
           </p>
 
-          <ul class="fiter-list">
-
+          <ul class="filter-list">
             <li>
-              <!-- "All" shows everything -->
-              <button class="filter-btn active" onclick="filterItems('All')">All</button>
+              <button class="filter-btn active" onclick="filterItems(this, 'All')">All</button>
             </li>
-          
             <li>
-              <button class="filter-btn" onclick="filterItems('America')">America</button>
+              <button class="filter-btn" onclick="filterItems(this, 'America')">America</button>
             </li>
-          
             <li>
-              <button class="filter-btn" onclick="filterItems('Europe')">Europe</button>
+              <button class="filter-btn" onclick="filterItems(this, 'Europe')">Europe</button>
             </li>
-          
             <li>
-              <button class="filter-btn" onclick="filterItems('Australia')">Australia</button>
+              <button class="filter-btn" onclick="filterItems(this, 'Australia')">Australia</button>
             </li>
-          
             <li>
-              <button class="filter-btn" onclick="filterItems('Africa')">Africa</button>
+              <button class="filter-btn" onclick="filterItems(this, 'Africa')">Africa</button>
             </li>
-          
           </ul>
+          
           
 
           <ul class="food-menu-list">
@@ -980,6 +893,90 @@
           </div>
         </div>
       </section>
+      <section class="section section-divider bloge" id="blog">
+        <div class="container">
+      
+          <p class="section-subtitle"></p>
+      
+          <h2 class="h2 section-title">
+            We sell everything you love about Africa, wherever you are in the world. <span class="span"></span>
+          </h2>
+      
+          <p class="section-text">
+            Our mission goes beyond offering our own line of authentic foods. We provide a wide variety of Africa-made products.
+            <!-- The "client wants to tell a story" text goes here. 
+                 Add as much or as little as you'd like above the slider. -->
+          </p>
+      
+          <!-- Slider wrapper -->
+          <div class="slider">
+      
+            <!-- Slide 1 -->
+            <div class="slide active">
+              <!-- Text above the image -->
+              
+              <img src="./assets/images/warehouse1.jpg" alt="Warehouse 1" class="slide-img">
+            </div>
+      
+            <!-- Slide 2 -->
+         
+      
+            <!-- Slide 3 -->
+            <div class="slide">
+              
+              <img src="./assets/images/warehouse3.jpg" alt="Warehouse 3" class="slide-img">
+            </div>
+      
+            <!-- Slide 4 -->
+            
+
+            <div class="slide">
+              
+              <img src="./assets/images/warehouse5.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+
+            <div class="slide">
+              
+              <img src="./assets/images/warehouse6.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+            <div class="slide">
+              
+              
+              <img src="./assets/images/warehouse7.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+            <div class="slide">
+              
+              <img src="./assets/images/warehouse8.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+            <div class="slide">
+              
+              <img src="./assets/images/warehouse9.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+            <div class="slide">
+              
+              <img src="./assets/images/warehouse10.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+            <div class="slide">
+             
+              <img src="./assets/images/warehouse11.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+            <div class="slide">
+              
+              <img src="./assets/images/warehouse12.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+            <div class="slide">
+              
+              <img src="./assets/images/warehouse13.jpg" alt="Warehouse 4" class="slide-img">
+            </div>
+      
+            <!-- Navigation arrows -->
+            <button class="arrow prev-arrow" aria-label="Previous slide">&#10094;</button>
+            <button class="arrow next-arrow" aria-label="Next slide">&#10095;</button>
+      
+          </div> <!-- /slider -->
+      
+        </div><!-- /container -->
+      </section>
 
 
 
@@ -995,13 +992,12 @@
           <div class="delivery-content">
 
             <h2 class="h2 section-title">
-              A Moments Of Delivered On <span class="span">Right Time</span> & Place
+              Get all your trusted brands in <span class="span">one place:</span> Milo, Nido, Lucozade, and more!
             </h2>
 
             <p class="section-text">
-              We pride ourselves on providing a seamless and reliable ordering experience. From the moment you place an order, our team works diligently to ensure it arrives on time and without complication. </p>
-
-            <button class="btn btn-hover">Order Now</button>
+              We pride ourselves on being your trusted source for authentic Ghanaian food products. From popular brands like Milo, Nido, and Lucozade to traditional favorites, we bring you the best of Ghana’s food lines. </p>
+              <button class="btn btn-hover">Order Now</button>
           </div>
 
           <figure class="delivery-banner">
@@ -1235,6 +1231,8 @@
         </div>
       </section>
       
+     
+      
 
 
 
@@ -1262,7 +1260,7 @@
               <div class="blog-card">
 
                 <div class="card-banner">
-                  <img src="./assets/images/warehouse4.jpg" width="600" height="390" loading="lazy"
+                  <img src="./assets/images/warehouse7.jpg" width="600" height="390" loading="lazy"
                     alt="Our History" class="w-100">
 
                 
@@ -1284,6 +1282,42 @@
                   <p class="card-text">
                     Elssy Kess Company Limited was established and registered in 1998 in Ghana.  From its humble beginning as a cottage industry supplying processed foods to convenience shops in the domestic market, it has won the admiration of the people with its great recipes and proprietary. An African-inspired foods for mainstream consumers in Europe, North America and Africa.</p>
 
+                  <a href="#" class="btn-link">
+                    <span>Read More</span>
+
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="card-banner">
+                  <img src="./assets/images/man.png" width="600" height="390" loading="lazy"
+                    alt="Our History" class="w-100">
+
+                
+                </div>
+
+                <div class="card-content">
+
+                  <div class="card-meta-wrapper">
+
+                    
+                   
+
+                  </div>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Cooking Made Simple for Everyone!</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Our products are designed with simplicity in mind, making it easy for anyone to whip up a delicious meal in no time! Whether you're a pro in the kitchen or just trying your hand at cooking, preparing your favorite Ghanaian meals has never been this effortless.</p>
                   <a href="#" class="btn-link">
                     <span>Read More</span>
 

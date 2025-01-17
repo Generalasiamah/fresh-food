@@ -125,23 +125,31 @@ function toggleGallery(galleryId) {
 }
 
 
-function filterItems(country) {
+function filterItems(button, country) {
+  // Handle button active state
+  const buttons = document.querySelectorAll(".filter-btn");
+  buttons.forEach(btn => btn.classList.remove("active")); // Remove active class
+  button.classList.add("active"); // Add active class to the clicked button
+
   // Select all items in .food-menu-list
   const allItems = document.querySelectorAll('.food-menu-list li');
 
+  // Filter items based on the selected country
   allItems.forEach(item => {
-    // Get the country data from data-country attribute
-    const itemCountry = item.dataset.country; 
-    // or `item.getAttribute('data-country')`
+    const itemCountry = item.dataset.country; // Get the country from data attribute
 
-    // If user clicked 'All' OR the item's data-country matches the filter:
+    // Show or hide items based on the filter condition
     if (country === 'All' || itemCountry === country) {
-      item.style.display = 'block';  // Show it
+      item.style.display = 'block'; // Show item
     } else {
-      item.style.display = 'none';   // Hide it
+      item.style.display = 'none'; // Hide item
     }
   });
+
+  // Log the filter action (optional)
+  console.log(`Filtering items by: ${country}`);
 }
+
 
 const slides = document.querySelectorAll('.slide');
 const prevArrow = document.querySelector('.prev-arrow');
@@ -196,3 +204,4 @@ prevArrow.addEventListener('click', () => {
 // Initialize
 showSlide(currentSlideIndex);
 startAutoSlide();
+
